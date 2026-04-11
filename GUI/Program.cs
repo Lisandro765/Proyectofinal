@@ -13,13 +13,21 @@ namespace GUI
         [STAThread]
         static void Main()
         {
-            // Estas líneas configuran la parte visual
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Esto abre tu formulario de Login. 
-            // Si te da error en 'frmLogin', revisá que se llame exactamente así en el explorador.
-            Application.Run(new frmLogin());
+            // 1. Solo creamos el objeto del login, NO lo corremos con Application.Run todavía
+            frmLogin login = new frmLogin();
+
+            // 2. Usamos ShowDialog para que el programa se detenga aquí hasta que pongás la clave
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                // 3. SI Y SOLO SI la clave fue "admin" y "123", abrimos el formulario principal
+                Application.Run(new frmPrincipal());
+            }
         }
+
     }
-}
+    }
+
+
