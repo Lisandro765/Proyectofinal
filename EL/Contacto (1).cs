@@ -29,6 +29,12 @@ namespace EL
         // Fecha en que fue agregado el contacto
         public DateTime FechaRegistro { get; set; }
 
+        // ID del grupo al que pertenece el contacto (clave foránea → Grupo)
+        public int? IdGrupo { get; set; }
+
+        // Objeto de navegación al grupo (puede ser null si no tiene grupo asignado)
+        public Grupo Grupo { get; set; }
+
         // Constructor por defecto
         public Contacto()
         {
