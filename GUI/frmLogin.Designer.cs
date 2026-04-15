@@ -52,6 +52,7 @@
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Size = new System.Drawing.Size(170, 22);
             this.textUsuario.TabIndex = 1;
+            this.textUsuario.TextChanged += new System.EventHandler(this.textUsuario_TextChanged);
             // 
             // txtcontraseña
             // 
@@ -69,6 +70,7 @@
             this.textContraseña.Name = "textContraseña";
             this.textContraseña.Size = new System.Drawing.Size(170, 22);
             this.textContraseña.TabIndex = 3;
+            this.textContraseña.UseSystemPasswordChar = true;
             // 
             // btnEntrar
             // 
