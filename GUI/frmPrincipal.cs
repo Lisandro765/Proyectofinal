@@ -12,41 +12,56 @@ namespace GUI
 {
     public partial class frmPrincipal : Form
     {
+        private int contadorId = 1;
+
         public frmPrincipal()
         {
             InitializeComponent();
+
+            dgvContactos.Columns.Clear();
+            dgvContactos.Columns.Add("colId", "ID");
+            dgvContactos.Columns.Add("colNombre", "Nombres");
+            dgvContactos.Columns.Add("colTelefono", "Telefono");
+            dgvContactos.Columns.Add("colCorreo", "correo");
+            dgvContactos.Columns.Add("colDireccion", "Dirección");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AbrirRegistro();
         }
 
-        private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
-        }
-
-        
         private void registrarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Creamos la instancia de tu formulario de registro
-            frmRegistro ventanaRegistro = new frmRegistro();
+            AbrirRegistro();
+        }
 
-            // Esto hace que la ventana se abra centrada y no podás usar la de atrás hasta cerrar esta
+        private void AbrirRegistro()
+        {
+            frmRegistro ventanaRegistro = new frmRegistro();
             ventanaRegistro.StartPosition = FormStartPosition.CenterScreen;
-            ventanaRegistro.ShowDialog();
+
+            if (ventanaRegistro.ShowDialog() == DialogResult.OK)
+            {
+                dgvContactos.Rows.Add(
+                    contadorId++,
+                    ventanaRegistro.NombrePersona,
+                    "",
+                    "",
+                    ventanaRegistro.DireccionPersona
+                );
+            }
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close(); // Esto cierra la pantalla principal y vuelve al Login (si lo configuraste así en Program.cs)
+            this.Close();
         }
 
         private void verListadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Aquí es donde llamarías a tu capa BLL para traer los datos
-            // Por ahora, al menos limpia o refresca el control
             dgvContactos.Refresh();
         }
     }

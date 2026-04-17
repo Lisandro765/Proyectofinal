@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistro));
             this.Guardar = new System.Windows.Forms.Button();
             this.textcorreo = new System.Windows.Forms.TextBox();
             this.textelefono = new System.Windows.Forms.TextBox();
@@ -41,12 +42,13 @@
             // 
             // Guardar
             // 
+            this.Guardar.BackColor = System.Drawing.Color.Lime;
             this.Guardar.Location = new System.Drawing.Point(330, 373);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(121, 51);
             this.Guardar.TabIndex = 5;
             this.Guardar.Text = "Guardar";
-            this.Guardar.UseVisualStyleBackColor = true;
+            this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.button5_Click);
             // 
             // textcorreo
@@ -135,6 +137,7 @@
             this.Controls.Add(this.textelefono);
             this.Controls.Add(this.textcorreo);
             this.Controls.Add(this.Guardar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegistro";
             this.Text = "frmRegistro";
             this.ResumeLayout(false);
