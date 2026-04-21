@@ -17,13 +17,6 @@ namespace GUI
         public frmPrincipal()
         {
             InitializeComponent();
-
-            dgvContactos.Columns.Clear();
-            dgvContactos.Columns.Add("colId", "ID");
-            dgvContactos.Columns.Add("colNombre", "Nombres");
-            dgvContactos.Columns.Add("colTelefono", "Telefono");
-            dgvContactos.Columns.Add("colCorreo", "correo");
-            dgvContactos.Columns.Add("colDireccion", "Dirección");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,8 +41,8 @@ namespace GUI
                 dgvContactos.Rows.Add(
                     contadorId++,
                     ventanaRegistro.NombrePersona,
-                    "",
-                    "",
+                    ventanaRegistro.TelefonoPersona,
+                    ventanaRegistro.CorreoPersona,
                     ventanaRegistro.DireccionPersona
                 );
             }
