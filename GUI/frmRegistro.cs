@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 
 namespace GUI
 {
@@ -42,20 +43,32 @@ namespace GUI
                 return;
             }
 
-            NombrePersona = textBox1.Text.Trim();
-            TelefonoPersona = textelefono.Text.Trim();
-            CorreoPersona = textcorreo.Text.Trim();
-            DireccionPersona = textdirreción.Text.Trim();
+            try
+            {
+                bool resultado = DAL.ContactosDAL.Guardar(
+                    textBox1.Text.Trim(),
+                    textelefono.Text.Trim(),
+                    textcorreo.Text.Trim(),
+                    textdirreción.Text.Trim()
+                );
 
-            MessageBox.Show("Contacto guardado exitosamente.", "Éxito",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                if (resultado)
+                {
+                    MessageBox.Show("Contacto guardado exitosamente.", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        
     }
-
-
 }
+
+
+
+

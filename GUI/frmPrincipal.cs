@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,38 @@ namespace GUI
 {
     public partial class frmPrincipal : Form
     {
-        private int contadorId = 1;
-
         public frmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            CargarContactos();
+        }
+
+        private void CargarContactos()
+        {
+            dgvContactos.Rows.Clear();
+
+            string query = "SELECT Id, Nombre, Telefono, Correo, Direccion FROM Contactos";
+
+            using (SqlConnection con = DAL.ConexionBD.ObtenerConexion())
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    dgvContactos.Rows.Add(
+                        reader["Id"],
+                        reader["Nombre"],
+                        reader["Telefono"],
+                        reader["Correo"],
+                        reader["Direccion"]
+                    );
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,13 +66,7 @@ namespace GUI
 
             if (ventanaRegistro.ShowDialog() == DialogResult.OK)
             {
-                dgvContactos.Rows.Add(
-                    contadorId++,
-                    ventanaRegistro.NombrePersona,
-                    ventanaRegistro.TelefonoPersona,
-                    ventanaRegistro.CorreoPersona,
-                    ventanaRegistro.DireccionPersona
-                );
+                CargarContactos();
             }
         }
 
@@ -55,7 +77,7 @@ namespace GUI
 
         private void verListadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dgvContactos.Refresh();
+            CargarContactos();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using DAL;
 
 namespace BLL
@@ -16,4 +15,3 @@ namespace BLL
         }
     }
 }
-
