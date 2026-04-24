@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.txtusuario = new System.Windows.Forms.Label();
             this.textUsuario = new System.Windows.Forms.TextBox();
             this.txtcontraseña = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             // txtcontraseña
             // 
             this.txtcontraseña.AutoSize = true;
-            this.txtcontraseña.Location = new System.Drawing.Point(319, 203);
+            this.txtcontraseña.Location = new System.Drawing.Point(309, 201);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(76, 16);
             this.txtcontraseña.TabIndex = 2;
@@ -87,12 +88,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::GUI.Properties.Resources.WhatsApp_Image_2026_04_22_at_9_10_53_PM;
+            this.ClientSize = new System.Drawing.Size(767, 450);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.textContraseña);
             this.Controls.Add(this.txtcontraseña);
             this.Controls.Add(this.textUsuario);
             this.Controls.Add(this.txtusuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.Text = "frmLogin";
             this.ResumeLayout(false);

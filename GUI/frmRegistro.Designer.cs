@@ -43,7 +43,7 @@
             // Guardar
             // 
             this.Guardar.BackColor = System.Drawing.Color.Lime;
-            this.Guardar.Location = new System.Drawing.Point(330, 373);
+            this.Guardar.Location = new System.Drawing.Point(186, 375);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(121, 51);
             this.Guardar.TabIndex = 5;
@@ -53,7 +53,7 @@
             // 
             // textcorreo
             // 
-            this.textcorreo.Location = new System.Drawing.Point(280, 200);
+            this.textcorreo.Location = new System.Drawing.Point(127, 210);
             this.textcorreo.Multiline = true;
             this.textcorreo.Name = "textcorreo";
             this.textcorreo.Size = new System.Drawing.Size(270, 40);
@@ -62,7 +62,7 @@
             // 
             // textelefono
             // 
-            this.textelefono.Location = new System.Drawing.Point(280, 122);
+            this.textelefono.Location = new System.Drawing.Point(127, 124);
             this.textelefono.Multiline = true;
             this.textelefono.Name = "textelefono";
             this.textelefono.Size = new System.Drawing.Size(270, 41);
@@ -71,7 +71,7 @@
             // 
             // textdirreción
             // 
-            this.textdirreción.Location = new System.Drawing.Point(280, 274);
+            this.textdirreción.Location = new System.Drawing.Point(127, 289);
             this.textdirreción.Multiline = true;
             this.textdirreción.Name = "textdirreción";
             this.textdirreción.Size = new System.Drawing.Size(270, 43);
@@ -80,7 +80,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(280, 64);
+            this.textBox1.Location = new System.Drawing.Point(127, 52);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(270, 31);
@@ -89,7 +89,7 @@
             // txtNombre
             // 
             this.txtNombre.AutoSize = true;
-            this.txtNombre.Location = new System.Drawing.Point(147, 67);
+            this.txtNombre.Location = new System.Drawing.Point(31, 67);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(56, 16);
             this.txtNombre.TabIndex = 11;
@@ -99,7 +99,7 @@
             // txtTelefono
             // 
             this.txtTelefono.AutoSize = true;
-            this.txtTelefono.Location = new System.Drawing.Point(147, 134);
+            this.txtTelefono.Location = new System.Drawing.Point(31, 138);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(61, 16);
             this.txtTelefono.TabIndex = 12;
@@ -108,7 +108,7 @@
             // txtCorreo
             // 
             this.txtCorreo.AutoSize = true;
-            this.txtCorreo.Location = new System.Drawing.Point(155, 224);
+            this.txtCorreo.Location = new System.Drawing.Point(31, 213);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(48, 16);
             this.txtCorreo.TabIndex = 13;
@@ -117,7 +117,7 @@
             // txtDirección
             // 
             this.txtDirección.AutoSize = true;
-            this.txtDirección.Location = new System.Drawing.Point(147, 289);
+            this.txtDirección.Location = new System.Drawing.Point(31, 292);
             this.txtDirección.Name = "txtDirección";
             this.txtDirección.Size = new System.Drawing.Size(64, 16);
             this.txtDirección.TabIndex = 14;
@@ -127,6 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtDirección);
             this.Controls.Add(this.txtCorreo);
