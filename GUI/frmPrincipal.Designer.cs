@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvContactos = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,14 +41,10 @@
             this.contactosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verListadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lisandroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminarContactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarContactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,13 +59,43 @@
             this.Telefono,
             this.correo,
             this.Dirección});
-            this.dgvContactos.Location = new System.Drawing.Point(0, 41);
+            this.dgvContactos.Location = new System.Drawing.Point(0, 31);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.RowHeadersWidth = 51;
             this.dgvContactos.RowTemplate.Height = 24;
-            this.dgvContactos.Size = new System.Drawing.Size(800, 410);
+            this.dgvContactos.Size = new System.Drawing.Size(800, 420);
             this.dgvContactos.TabIndex = 0;
             this.dgvContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.MinimumWidth = 6;
+            this.Nombres.Name = "Nombres";
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            // 
+            // correo
+            // 
+            this.correo.HeaderText = "correo";
+            this.correo.MinimumWidth = 6;
+            this.correo.Name = "correo";
+            // 
+            // Dirección
+            // 
+            this.Dirección.HeaderText = "Dirección";
+            this.Dirección.MinimumWidth = 6;
+            this.Dirección.Name = "Dirección";
             // 
             // menuStrip1
             // 
@@ -105,7 +136,9 @@
             // 
             this.contactosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verListadoToolStripMenuItem,
-            this.registrarNuevoToolStripMenuItem});
+            this.registrarNuevoToolStripMenuItem,
+            this.eliminarContactoToolStripMenuItem,
+            this.editarContactoToolStripMenuItem});
             this.contactosToolStripMenuItem.Name = "contactosToolStripMenuItem";
             this.contactosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.contactosToolStripMenuItem.Text = "Contactos";
@@ -113,24 +146,16 @@
             // verListadoToolStripMenuItem
             // 
             this.verListadoToolStripMenuItem.Name = "verListadoToolStripMenuItem";
-            this.verListadoToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.verListadoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.verListadoToolStripMenuItem.Text = "Ver Listado";
             this.verListadoToolStripMenuItem.Click += new System.EventHandler(this.verListadoToolStripMenuItem_Click);
             // 
             // registrarNuevoToolStripMenuItem
             // 
-            this.registrarNuevoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lisandroToolStripMenuItem});
             this.registrarNuevoToolStripMenuItem.Name = "registrarNuevoToolStripMenuItem";
-            this.registrarNuevoToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.registrarNuevoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.registrarNuevoToolStripMenuItem.Text = "Registrar nuevo";
             this.registrarNuevoToolStripMenuItem.Click += new System.EventHandler(this.registrarNuevoToolStripMenuItem_Click);
-            // 
-            // lisandroToolStripMenuItem
-            // 
-            this.lisandroToolStripMenuItem.Name = "lisandroToolStripMenuItem";
-            this.lisandroToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
-            this.lisandroToolStripMenuItem.Text = "lisandro";
             // 
             // aToolStripMenuItem
             // 
@@ -143,38 +168,20 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
-            // id
+            // eliminarContactoToolStripMenuItem
             // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
+            this.eliminarContactoToolStripMenuItem.Name = "eliminarContactoToolStripMenuItem";
+            this.eliminarContactoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.eliminarContactoToolStripMenuItem.Text = "Eliminar contacto";
             // 
-            // Nombres
+            // editarContactoToolStripMenuItem
             // 
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.MinimumWidth = 6;
-            this.Nombres.Name = "Nombres";
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            // 
-            // correo
-            // 
-            this.correo.HeaderText = "correo";
-            this.correo.MinimumWidth = 6;
-            this.correo.Name = "correo";
-            // 
-            // Dirección
-            // 
-            this.Dirección.HeaderText = "Dirección";
-            this.Dirección.MinimumWidth = 6;
-            this.Dirección.Name = "Dirección";
+            this.editarContactoToolStripMenuItem.Name = "editarContactoToolStripMenuItem";
+            this.editarContactoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editarContactoToolStripMenuItem.Text = "Editar contacto";
             // 
             // frmPrincipal
             // 
@@ -184,8 +191,11 @@
             this.Controls.Add(this.dgvContactos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.Text = "Form";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -206,11 +216,12 @@
         private System.Windows.Forms.ToolStripMenuItem registrarNuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lisandroToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dirección;
+        private System.Windows.Forms.ToolStripMenuItem eliminarContactoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarContactoToolStripMenuItem;
     }
 }
