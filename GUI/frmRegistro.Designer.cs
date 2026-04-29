@@ -139,6 +139,8 @@
             this.Controls.Add(this.textcorreo);
             this.Controls.Add(this.Guardar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRegistro";
             this.Text = "frmRegistro";
             this.ResumeLayout(false);

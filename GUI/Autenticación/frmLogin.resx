@@ -117,7 +117,140 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtusuario.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtusuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 57</value>
+  </data>
+  <data name="txtusuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 16</value>
+  </data>
+  <data name="txtusuario.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtusuario.Text" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.Name" xml:space="preserve">
+    <value>txtusuario</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textUsuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 88</value>
+  </data>
+  <data name="textUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
+  </data>
+  <data name="textUsuario.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textUsuario.Name" xml:space="preserve">
+    <value>textUsuario</value>
+  </data>
+  <data name="&gt;&gt;textUsuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textUsuario.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textUsuario.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtcontraseña.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtcontraseña.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 201</value>
+  </data>
+  <data name="txtcontraseña.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 16</value>
+  </data>
+  <data name="txtcontraseña.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtcontraseña.Text" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="&gt;&gt;txtcontraseña.Name" xml:space="preserve">
+    <value>txtcontraseña</value>
+  </data>
+  <data name="&gt;&gt;txtcontraseña.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtcontraseña.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtcontraseña.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textContraseña.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 263</value>
+  </data>
+  <data name="textContraseña.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
+  </data>
+  <data name="textContraseña.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textContraseña.Name" xml:space="preserve">
+    <value>textContraseña</value>
+  </data>
+  <data name="&gt;&gt;textContraseña.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textContraseña.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textContraseña.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnEntrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>303, 356</value>
+  </data>
+  <data name="btnEntrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 43</value>
+  </data>
+  <data name="btnEntrar.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnEntrar.Text" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="&gt;&gt;btnEntrar.Name" xml:space="preserve">
+    <value>btnEntrar</value>
+  </data>
+  <data name="&gt;&gt;btnEntrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEntrar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnEntrar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>767, 450</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIAAPMwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAMtZJ
@@ -340,5 +473,14 @@
         wFDwGP++D7WMugshhoF0dmwkd/yF++NtK16LMATSl1ihEHY4itvYjJfJcPTZz+qTW2b6/wFaSDxPtUkL
         dwAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>frmLogin</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmLogin</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
