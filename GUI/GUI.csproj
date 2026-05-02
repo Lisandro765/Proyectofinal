@@ -88,6 +88,9 @@
     <EmbeddedResource Include="Autenticación\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditar %282%29.resx">
+      <DependentUpon>frmEditar %282%29.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +103,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL2\BLL2.csproj">
+      <Project>{e3b62691-02d4-4a0b-af6d-c93c5c449407}</Project>
+      <Name>BLL2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DALL\DALL.csproj">
       <Project>{f06a0af8-621d-4181-aa3c-9578394f536d}</Project>
       <Name>DALL</Name>

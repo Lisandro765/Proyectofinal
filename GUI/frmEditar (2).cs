@@ -1,7 +1,7 @@
-using System;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+using BLL;
 using DAL;
+using System;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -13,46 +13,36 @@ namespace GUI
         {
             InitializeComponent();
             _id = id;
-            txtNombre.Text    = nombre;
-            txtTelefono.Text  = telefono;
-            txtCorreo.Text    = correo;
+            txtNombre.Text = nombre;
+            txtTelefono.Text = telefono;
+            txtCorreo.Text = correo;
             txtDireccion.Text = direccion;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
-            {
-                MessageBox.Show("El nombre es obligatorio.", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             try
             {
-                string query = @"UPDATE Contactos 
-                                 SET Nombre = @Nombre, Telefono = @Telefono,
-                                     Correo = @Correo, Direccion = @Direccion
-                                 WHERE Id = @Id";
+                bool resultado = ContactosBLL.Editar(
+                    _id,
+                    txtNombre.Text.Trim(),
+                    txtTelefono.Text.Trim(),
+                    txtCorreo.Text.Trim(),
+                    txtDireccion.Text.Trim()
+                );
 
-                using (SqlConnection con = ConexionBD.ObtenerConexion())
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                if (resultado)
                 {
-                    cmd.Parameters.AddWithValue("@Id",        _id);
-                    cmd.Parameters.AddWithValue("@Nombre",    txtNombre.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Telefono",  txtTelefono.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Correo",    txtCorreo.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text.Trim());
-
-                    con.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                        this.DialogResult = DialogResult.OK;
+                    MessageBox.Show("Contacto actualizado exitosamente.", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

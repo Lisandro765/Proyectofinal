@@ -36,16 +36,9 @@ namespace GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
-            {
-                MessageBox.Show("El nombre es obligatorio.", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             try
             {
-                bool resultado = DAL.ContactosDAL.Guardar(
+                bool resultado = BLL.ContactosBLL.Guardar(
                     textBox1.Text.Trim(),
                     textelefono.Text.Trim(),
                     textcorreo.Text.Trim(),
@@ -62,10 +55,12 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+ 
+            
     }
 }
 
