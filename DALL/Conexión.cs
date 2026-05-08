@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 using System.Data.SqlClient;
 
 namespace DAL
 {
     public class ConexionBD
     {
+        // La cadena de conexión se lee desde App.config (clave "AgendaDB")
+        // para evitar valores fijos en el código fuente.
         private static string cadenaConexion =
-        "Server=LISANDRO_DIAZ;Database=AgendaDeContactos;Integrated Security=True;";
+            ConfigurationManager.ConnectionStrings["AgendaDB"].ConnectionString;
 
         public static SqlConnection ObtenerConexion()
         {
@@ -18,4 +16,3 @@ namespace DAL
         }
     }
 }
-

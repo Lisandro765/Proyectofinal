@@ -16,11 +16,6 @@
         private void InitializeComponent()
         {
             this.dgvContactos = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -32,30 +27,24 @@
             this.editarContactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
 
-      
+            // dgvContactos
             this.dgvContactos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                this.id, this.Nombres, this.Telefono, this.correo, this.Dirección });
-            this.dgvContactos.Location = new System.Drawing.Point(0, 31);
+            this.dgvContactos.Location = new System.Drawing.Point(0, 62);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.RowHeadersWidth = 51;
             this.dgvContactos.RowTemplate.Height = 24;
-            this.dgvContactos.Size = new System.Drawing.Size(800, 420);
+            this.dgvContactos.Size = new System.Drawing.Size(800, 388);
             this.dgvContactos.TabIndex = 0;
             this.dgvContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
 
-     
-            this.id.HeaderText = "ID"; this.id.MinimumWidth = 6; this.id.Name = "id";
-            this.Nombres.HeaderText = "Nombres"; this.Nombres.MinimumWidth = 6; this.Nombres.Name = "Nombres";
-            this.Telefono.HeaderText = "Telefono"; this.Telefono.MinimumWidth = 6; this.Telefono.Name = "Telefono";
-            this.correo.HeaderText = "correo"; this.correo.MinimumWidth = 6; this.correo.Name = "correo";
-            this.Dirección.HeaderText = "Dirección"; this.Dirección.MinimumWidth = 6; this.Dirección.Name = "Dirección";
-
+            // menuStrip1
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
                 this.archivosToolStripMenuItem,
@@ -67,7 +56,7 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
 
-           
+            // archivosToolStripMenuItem
             this.archivosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
                 this.cerrarSesiónToolStripMenuItem, this.salirToolStripMenuItem });
             this.archivosToolStripMenuItem.Name = "archivosToolStripMenuItem";
@@ -83,7 +72,7 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.salirToolStripMenuItem.Text = "Salir";
 
-            
+            // contactosToolStripMenuItem
             this.contactosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
                 this.verListadoToolStripMenuItem,
                 this.registrarNuevoToolStripMenuItem,
@@ -103,13 +92,11 @@
             this.registrarNuevoToolStripMenuItem.Text = "Registrar nuevo";
             this.registrarNuevoToolStripMenuItem.Click += new System.EventHandler(this.registrarNuevoToolStripMenuItem_Click);
 
-            // *** ELIMINAR - evento Click conectado ***
             this.eliminarContactoToolStripMenuItem.Name = "eliminarContactoToolStripMenuItem";
             this.eliminarContactoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.eliminarContactoToolStripMenuItem.Text = "Eliminar contacto";
             this.eliminarContactoToolStripMenuItem.Click += new System.EventHandler(this.eliminarContactoToolStripMenuItem_Click);
 
-            // *** EDITAR - evento Click conectado ***
             this.editarContactoToolStripMenuItem.Name = "editarContactoToolStripMenuItem";
             this.editarContactoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editarContactoToolStripMenuItem.Text = "Editar contacto";
@@ -126,10 +113,26 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
 
+            // lblBuscar
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(8, 36);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(60, 16);
+            this.lblBuscar.Text = "Buscar:";
+
+            // txtBuscar
+            this.txtBuscar.Location = new System.Drawing.Point(72, 33);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(300, 22);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+
             // frmPrincipal
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.dgvContactos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -159,10 +162,7 @@
         private System.Windows.Forms.ToolStripMenuItem editarContactoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dirección;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

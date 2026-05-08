@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Data.SqlClient;
 
 namespace DAL
 {
     public class ContactosDAL
     {
-
         public static bool Guardar(string nombre, string telefono,
                                    string correo, string direccion)
         {
@@ -31,22 +29,20 @@ namespace DAL
             }
         }
 
-
-        public static bool Eliminar(int idContacto)
+        public static bool Eliminar(int id)
         {
-            string query = "DELETE FROM Contactos WHERE IdContacto = @Id";
+            string query = "DELETE FROM Contactos WHERE Id = @Id";
 
             using (SqlConnection con = ConexionBD.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@Id", idContacto);
+                cmd.Parameters.AddWithValue("@Id", id);
                 con.Open();
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
 
-
-        public static bool Editar(int idContacto, string nombre, string telefono,
+        public static bool Editar(int id, string nombre, string telefono,
                                   string correo, string direccion)
         {
             string query = @"UPDATE Contactos
@@ -54,12 +50,12 @@ namespace DAL
                                  Telefono  = @Telefono,
                                  Correo    = @Correo,
                                  Direccion = @Direccion
-                             WHERE IdContacto = @Id";
+                             WHERE Id = @Id";
 
             using (SqlConnection con = ConexionBD.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@Id", idContacto);
+                cmd.Parameters.AddWithValue("@Id", id);
                 cmd.Parameters.AddWithValue("@Nombre", nombre);
                 cmd.Parameters.AddWithValue("@Telefono", telefono);
                 cmd.Parameters.AddWithValue("@Correo", correo);
@@ -69,9 +65,10 @@ namespace DAL
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
+
         public static DataTable ObtenerTodos()
         {
-            string query = "SELECT IdContacto, Nombre, Telefono, Correo, Direccion FROM Contactos";
+            string query = "SELECT Id, Nombre, Telefono, Correo, Direccion FROM Contactos";
 
             using (SqlConnection con = ConexionBD.ObtenerConexion())
             using (SqlDataAdapter da = new SqlDataAdapter(query, con))
@@ -81,8 +78,6 @@ namespace DAL
                 return dt;
             }
         }
-
-
 
         public static bool ExisteCorreo(string correo)
         {
@@ -98,7 +93,7 @@ namespace DAL
 
         public static bool ExisteCorreo(string correo, int idExcluir)
         {
-            string query = "SELECT COUNT(*) FROM Contactos WHERE Correo = @Correo AND IdContacto <> @Id";
+            string query = "SELECT COUNT(*) FROM Contactos WHERE Correo = @Correo AND Id <> @Id";
             using (SqlConnection con = ConexionBD.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -123,7 +118,7 @@ namespace DAL
 
         public static bool ExisteTelefono(string telefono, int idExcluir)
         {
-            string query = "SELECT COUNT(*) FROM Contactos WHERE Telefono = @Telefono AND IdContacto <> @Id";
+            string query = "SELECT COUNT(*) FROM Contactos WHERE Telefono = @Telefono AND Id <> @Id";
             using (SqlConnection con = ConexionBD.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
